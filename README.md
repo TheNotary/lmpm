@@ -1,10 +1,14 @@
 # Linux Mint Post-install Manager (lmpm aka 'limpim')
 
-This gem allows you to easily configure LinuxMint in pre-set configurations which are easy to share online via github.com
+This gem allows you to easily configure LinuxMint in pre-set configurations that are easy to share online via github.com
 
 ## Details
 
-Lmpm will read a configuration script, and then customize Linux Mint accordingly.  It will change some .js files.  It will have the ability to revert the configuration back to what it was before.  It will handle dconf editing too.  
+The gem, lmpm, will read a configuration script, and then customize Linux Mint accordingly.  
+	* It has the ability to change .js files.  
+	* It will have the ability to revert the configuration back to what it was before.  
+	* It will handle dconf editing too.  
+	* It will even allow you to specify wallpaper.  
 
 ## Installation/ Usage
 
@@ -29,4 +33,4 @@ Lmpm can be installed two ways:
 5. Create new Pull Request
 
 
-Also, learn how to create your own scripts.  Maybe I'll build a script search engine *eyes widen in excitement* some day!
+Also, learn how to create your own scripts.  Maybe I'll build a script search engine *eyes widen in excitement*!

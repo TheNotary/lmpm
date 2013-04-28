@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Lmpm::VERSION
   gem.authors       = ["TheNotary"]
   gem.email         = ["no@mail.plz"]
-  gem.description   = %q{This gem allows you to easily configure LinuxMint in pre-set configurations which are easy to share online via github.com}
-	gem.summary       = %q{The purpose of this gem is really to make it more visable how people are chosing to configure their Linux Mint systems.  It's helpful for users to see what interesting ways LM can be configured.  It's also useful for Linux Mint commiters to see what people like and what people don't like when they're considering default Linux Mint behaviors. }
+  gem.description   = %q{This gem allows you to easily configure LinuxMint in pre-set configurations that are easy to share online via github.com}
+	gem.summary       = %q{The purpose of this gem is really to make it more visable how people are choosing to configure their Linux Mint systems.  It's helpful for users to see what interesting ways LM can be configured.  It's also useful for Linux Mint commiters to see what people like and what people don't like when they're considering default Linux Mint behaviors. }
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
