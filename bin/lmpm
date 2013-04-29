@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'lmpm'
+
+class LmpmRunner < Thor
+
+	default_task :show
+
+	desc "show", "Shows the current configuration (stock, modded and not backed up, a specific script...)"
+	def show
+		puts Lmpm.show
+	end
+
+	desc "configure URI  config_file", "Configures Linux Mint to the specified configuration."
+	def configure(config_path)
+		puts Lmpm.configure config_path
+	end
+	
+	desc "restore", "Undoes the last Linux Mint configuration set by lmpm."
+	def restore
+		puts Lmpm.restore
+	end
+
+	desc "version", "Prints lmpm's version"
+	def version
+		puts Lmpm.version
+	end
+	map %w(-v --version) => :version
+
+end
+
+LmpmRunner.start
