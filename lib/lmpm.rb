@@ -1,6 +1,8 @@
 require "lmpm/version"
 require "lmpm/data"
 
+require "lmpm/configurator"
+
 module Lmpm
   # Your code goes here...
 	def self.show
