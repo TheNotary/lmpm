@@ -7,6 +7,8 @@ require "yaml"
 require 'uri'
 require 'open-uri'
 
+require 'safe_yaml'
+
 module Lmpm
   # Your code goes here...
 	def self.show

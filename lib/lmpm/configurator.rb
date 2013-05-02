@@ -65,7 +65,6 @@ module Lmpm
     end
     
     def read_config_data_from_web(path)
-      binding.pry
       file = open(path)
       file.read
     end
@@ -76,10 +75,9 @@ module Lmpm
     
     def valid_yaml_string?(config_text)
       begin
-        #YAML.load config_text
-        throw "ha"
+        YAML.safe_load(config_text)
         return true
-      rescue
+      rescue Exception => e
         return false
       end
     end
