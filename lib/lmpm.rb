@@ -3,6 +3,10 @@ require "lmpm/data"
 
 require "lmpm/configurator"
 
+require "yaml"
+require 'uri'
+require 'open-uri'
+
 module Lmpm
   # Your code goes here...
 	def self.show

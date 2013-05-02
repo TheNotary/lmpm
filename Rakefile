@@ -30,7 +30,7 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 RSpec::Core::RakeTask.new(:current) do |t|
-  t.pattern = %w[spec/program_spec.rb spec/shellcode_spec.rb]
+  t.pattern = "spec/*_spec.rb"
   t.rspec_opts = '--tag current'
 end
 
