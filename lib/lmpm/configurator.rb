@@ -22,7 +22,7 @@ module Lmpm
       end
       
       
-      YAML.load config_text
+      YAML.safe_load config_text
     end
     
     def ruby_gems
