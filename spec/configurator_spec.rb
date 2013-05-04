@@ -11,13 +11,19 @@ describe Lmpm::Configurator do
   end
   
   it "should be able to pull down the config data when supplied path to raw cfg file", :integration => true, current: true do
-    configurator = Lmpm::Configurator.new(@path_to_lm_postinstall_script_direct)
-    configurator.ruby_gems.first.should eq "gas2"
+    VCR.use_cassette('script_direct', :record => :new_episodes) do
+      configurator = Lmpm::Configurator.new(@path_to_lm_postinstall_script_direct)
+      configurator.ruby_gems.first.should eq "gas2"
+    end
+    
   end
   
   it "should be able to pull down the config data when supplied path to repo", integration: true, current: true do
-    configurator = Lmpm::Configurator.new(@path_to_lm_postinstall_script_repo)
-    configurator.ruby_gems.first.should eq "gas2"
+    VCR.use_cassette('script_repo', :record => :new_episodes) do
+      configurator = Lmpm::Configurator.new(@path_to_lm_postinstall_script_repo)
+      configurator.ruby_gems.first.should eq "gas2"
+    end
+    
   end
   
   it "should be able to scrape the aptana website for the latest version released" do

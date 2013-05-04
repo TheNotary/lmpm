@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.github.com/TheNotary/the_notarys_linux_mint_postinstall_configuration/master/lm_postinstall.cfg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 04 May 2013 03:09:29 GMT
+      Server:
+      - GitHub.com
+      Content-Type:
+      - text/plain; charset=utf-8
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '100'
+      X-Frame-Options:
+      - deny
+      Access-Control-Allow-Origin:
+      - https://render.github.com
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline
+      Content-Transfer-Encoding:
+      - binary
+      X-Runtime:
+      - '12'
+      Etag:
+      - ! '"76d85ed1997370c7974cba80a62f77ca"'
+      Content-Length:
+      - '2091'
+      Accept-Ranges:
+      - bytes
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-d46-DAL
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - private
+    body:
+      encoding: US-ASCII
+      string: ! "# This is a yaml style configuration file :)\n\nruby_gems:\n - gas2\n
+        - hub\n\napt_packages:\n general:\n  - curl git-core\n  - xbindkeys xbindkeys-config
+        docky xcalib ekiga xclip dconf-tools tree youtube-dl\n  - openssh-server grdesktop
+        nbtscan virtualbox vim\n programming_and_development:\n  - xautomation build-essential
+        bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev
+        libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf mysql-server
+        mysql-client libmysqlclient15-dev\n\nmanual_installs:  # use chef here\n programming:\n
+        \  - aptana: \n      install_directory: ~/bin/Aptana_Studio_3\n      source:
+        blah\n      latest_version: \n        lookup_url: https://raw.github.com/aptana/studio3/master/features/com.aptana.feature/feature.xml
+        # scrapes the latest version from a github repo\n        method: |\n          require
+        'open-uri';\n          require 'rexml/document'\n          \n          file
+        = open(url); \n          page_text = file.read;\n          doc = REXML::Document.new(page_text);\n
+        \         version = doc.elements['feature'].attributes['version'];\n      \n
+        \     installation_routine:    # Note:  https://www.samclarke.com/wp-content/uploads/2012/12/AptanaStudioInstall.sh\n
+        \      - mkdir -p %install_directory%\n       - cd %install_directory%\n       -
+        wget http://download.aptana.com/studio3/standalone/%latest_version%/linux/Aptana_Studio_3_Setup_Linux_x86_64_%latest_version%.zip
+        \   # http://download.aptana.com/studio3/standalone/3.4.0/linux/Aptana_Studio_3_Setup_Linux_x86_64_3.4.0.zip\n
+        \      - ./make\n       \n\nfile_hacks:\n - make_things_better:\n    target_file:
+        \"/just/a/path.js\"\n    starting_md5: \"k1j23lkj213\"\n    patches:\n     -\n
+        \     string_to_patch: \"function patchThisLine(){\"  # this is regex\n      replace_with:
+        \"function withThisLine(){\"\n      patch_multiple: false\n     -\n      string_to_patch:
+        \"function anotherLine(){\"\n      replace_with: \"function withThisLine(){\"\n
+        \     patch_multiple: 2\n     # store ending_md5 in a reciepts folder so the
+        procedure can be undone\n     \n\ndconf_edits:\n - fix_close_maximize_buttons:\n
+        \   blah: blah\n\n\n"
+    http_version: 
+  recorded_at: Sat, 04 May 2013 03:09:29 GMT
+recorded_with: VCR 2.4.0
