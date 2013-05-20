@@ -19,6 +19,8 @@ Gem::Specification.new do |gem|
 
 	gem.add_dependency "thor"
 	gem.add_dependency "safe_yaml"
+	gem.add_dependency "execjs"
+	gem.add_dependency "nokogiri"
 
 	gem.add_development_dependency "rake"
 	gem.add_development_dependency "pry"
@@ -27,4 +29,5 @@ Gem::Specification.new do |gem|
 	gem.add_development_dependency 'vcr'
 	gem.add_development_dependency 'rr'
 	gem.add_development_dependency 'webmock'
+	gem.add_development_dependency 'hpricot'
 end
