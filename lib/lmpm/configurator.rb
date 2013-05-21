@@ -62,6 +62,11 @@ module Lmpm
       
     end
     
+    
+    def configure_the_gconf_stuff
+      `gconftool-2 --set `
+    end
+    
     def scrape_webpage(url, parse_method, regex, path = nil)
       require 'open-uri';
       require 'rexml/document' # for xml parsing

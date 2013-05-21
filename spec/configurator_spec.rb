@@ -25,7 +25,6 @@ describe Lmpm::Configurator do
   end
   
   it "should install apt packages" do
-    #binding.pry
     @configurator.install_apt_packages @sample_packages
   end
 
